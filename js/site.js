@@ -5,7 +5,7 @@ const animalObject = {
 	koala: { name: 'koala', picture: '/img/_WW236934.jpg', description: 'big fellow' },
 };
 
-
+let galleryCardClass = 'gallerycard';
 
 // the app lives here
 const myApp = document.getElementById('app');
@@ -13,9 +13,9 @@ const myApp = document.getElementById('app');
 
 
 
-buildCard()
+buildGallery()
 
-function buildCard() {
+function buildGallery() {
 	for (let myIndex in animalObject) {
 		let myName = animalObject[myIndex].name;
 		let myURL = animalObject[myIndex].picture;
@@ -43,10 +43,11 @@ function buildCard(myName, myURL, myDescription, clearParent) {
 
 
 	//Choose the place for all the elements in the DOM
-	myApp.appendChild(cardFigure);
 	cardFigure.appendChild(animalName);
 	cardFigure.appendChild(cardImage);
 	cardFigure.appendChild(animalDescription);
 
+	myApp.appendChild(cardFigure);
 
+	cardFigure.classList.add(galleryCardClass);
 }
